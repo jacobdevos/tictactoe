@@ -1,8 +1,9 @@
 import copy
 
+
 class TicTacToeBoard:
     def __init__(self):
-        self.board=[[None, None, None],[None, None, None],[None, None, None]]
+        self.board = [[None, None, None], [None, None, None], [None, None, None]]
 
     def is_game_over(self):
         return self.is_game_won() or self.is_cats_game()
@@ -49,7 +50,7 @@ class TicTacToeBoard:
         if not self.is_already_marked(x, y):
             self.board[x][y] = "O"
         else:
-            print("cannot put O in {},{}".format(x,y))
+            print("cannot put O in {},{}".format(x, y))
 
     def is_already_marked(self, x, y):
         return self.board[x][y] is not None
@@ -75,7 +76,3 @@ class TicTacToeBoard:
             return " {} ".format(value)
         else:
             return "   "
-
-
-
-
