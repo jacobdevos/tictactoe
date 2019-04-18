@@ -3,25 +3,25 @@ import shlex
 from TicTacToeBoard import TicTacToeBoard
 
 
-def moveCursorUp(pointer):
+def move_cursor_up(pointer):
     if pointer[0] != 0:
         pointer = (pointer[0] - 1, pointer[1])
     return pointer
 
 
-def moveCursorDown(pointer):
+def move_cursor_down(pointer):
     if pointer[0] != 2:
         pointer = (pointer[0] + 1, pointer[1])
     return pointer
 
 
-def moveCursorLeft(pointer):
+def move_cursor_left(pointer):
     if pointer[1] != 0:
         pointer = (pointer[0], pointer[1] - 1)
     return pointer
 
 
-def moveCursorRight(pointer):
+def move_cursor_right(pointer):
     if pointer[1] != 2:
         pointer = (pointer[0], pointer[1] + 1)
     return pointer
@@ -43,13 +43,13 @@ while True:
     cmd, *args = shlex.split(input('> '))
 
     if cmd == 'left':
-        cursor_point = moveCursorLeft(cursor_point)
+        cursor_point = move_cursor_left(cursor_point)
     elif cmd == 'right':
-        cursor_point = moveCursorRight(cursor_point)
+        cursor_point = move_cursor_right(cursor_point)
     elif cmd == 'up':
-        cursor_point = moveCursorUp(cursor_point)
+        cursor_point = move_cursor_up(cursor_point)
     elif cmd == 'down':
-        cursor_point = moveCursorDown(cursor_point)
+        cursor_point = move_cursor_down(cursor_point)
     elif cmd == 'mark':
         if new_board.is_already_marked(cursor_point[0], cursor_point[1]):
             print("This point is already marked!")
