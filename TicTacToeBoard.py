@@ -40,18 +40,18 @@ class TicTacToeBoard:
                self.board[0][2] is not None and self.board[0][2] == self.board[1][1] == self.board[2][0]
 
     def put_x(self, x, y):
-        if not self.is_point_taken(x, y):
+        if not self.is_already_marked(x, y):
             self.board[x][y] = "X"
         else:
             print("cannot put X in {},{}".format(x, y))
 
     def put_o(self, x, y):
-        if not self.is_point_taken(x, y):
+        if not self.is_already_marked(x, y):
             self.board[x][y] = "O"
         else:
             print("cannot put O in {},{}".format(x,y))
 
-    def is_point_taken(self, x, y):
+    def is_already_marked(self, x, y):
         return self.board[x][y] is not None
 
     def print_board(self, pointer_location):
